@@ -25,7 +25,7 @@ const cardsData = [
 
     {
         question: 'What is a variable?',
-        answer: 'A container for a piece of data',
+        answer: 'A variable container for a piece of data',
     },
 
     {
@@ -69,4 +69,4 @@ function createCard (data, index) {
   cardsContainer.appendChild(card);
 }
 
-// createCards();
+createCards();
