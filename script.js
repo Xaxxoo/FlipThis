@@ -6,11 +6,11 @@ const showBtn = document.getElementById('show');
 const hideBtn = document.getElementById('hide');
 const questionEl = document.getElementById('question');
 const answerEl = document.getElementById('answer');
-const addCardBtn = document.getElementById('add');
+const addCardBtn = document.getElementById('add-card');
 const clear = document.getElementById('clear');
 const addContainer = document.getElementById('add-container');
 
-// Keep track of current card 
+// Keep track of current card
 let currentActiveCard = 0;
 
 //Store DOM cards
@@ -31,25 +31,25 @@ const cardsData = [
     {
         question: 'Example for case sensitive varibale',
         answer: 'thisIsAVariable',
-    }
+    },
 ];
 
 // Create all cards
-function createCards () {
-  cardsData.forEach((data, index) => createCards(data, index));
+function createCards() {
+    cardsData.forEach((data, index) => createCard(data, index));
 }
 
 // Create Single card in DOM
-function createCard (data, index) {
-  const card = document.createElement('div');
+function createCard(data, index) {
+    const card = document.createElement('div');
+    card.classList.add('card');
 
-  card.classList.add('card')
-  if (index === 0) {
-    card.classList.add('active');
-  }
+    if (index === 0) {
+        card.classList.add('active');
+    }
 
-  card.innerHTML = `
-  <div class='inner-card'>
+    card.innerHTML = `
+      <div class='inner-card'>
          <div class='inner-card-front'>
            <p>
            ${data.question}
@@ -62,11 +62,11 @@ function createCard (data, index) {
          </div>
        </div>
        `;
-  
-  //Add to DOM cards
-  cardsEl.push(card);
 
-  cardsContainer.appendChild(card);
+    //Add to DOM cards
+    cardsEl.push(card);
+
+    cardsContainer.appendChild(card);
 }
 
 createCards();
